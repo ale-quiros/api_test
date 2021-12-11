@@ -18,11 +18,8 @@ public class AuthHelper {
                 .when()
                 .post("/v1/user/login");
 
-
         JsonPath jsonPathEvaluator = response.jsonPath();
         String token = jsonPathEvaluator.get("token.access_token");
-
-        System.out.println("Token: " + token);
 
         return token;
     }

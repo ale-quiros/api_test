@@ -20,7 +20,7 @@ public class CommentsTests extends BaseTest{
     String commentId = "1234";
     String resourcePath = "/v1/comment";
 
-    @Test(priority=1)
+    @Test(priority=1,dependsOnGroups="Posts")
     public void Test_Create_Comment(){
         postId = PostHelper.getPostId();
         Comment newComment = new Comment(DataHelper.generateRandomName(), DataHelper.generateRandomContent());
@@ -42,7 +42,7 @@ public class CommentsTests extends BaseTest{
         System.out.println("test:" + commentId);
     }
 
-    @Test (priority=2)
+    @Test (priority=2,dependsOnGroups="Posts")
     public void Test_Get_Comment(){
         given()
                 .spec(RequestSpecs.generateBasicAuth())
@@ -53,7 +53,7 @@ public class CommentsTests extends BaseTest{
                 .statusCode(200);
     }
 
-    @Test (priority=3)
+    @Test (priority=3,dependsOnGroups="Posts")
     public void Test_Get_Comments(){
         given()
                 .spec(RequestSpecs.generateBasicAuth())
@@ -64,7 +64,7 @@ public class CommentsTests extends BaseTest{
                 .statusCode(200);
     }
 
-    @Test (priority=4)
+    @Test (priority=4,dependsOnGroups="Posts")
     public void Test_Update_Post(){
         Comment updateComment = new Comment("Title updated","Content Updated");
 
@@ -79,7 +79,7 @@ public class CommentsTests extends BaseTest{
                 .statusCode(200);
     }
 
-    @Test(priority=5)
+    @Test(priority=5,dependsOnGroups="Posts")
     public void Test_Delete_Post(){
         given()
                 .spec(RequestSpecs.generateBasicAuth())

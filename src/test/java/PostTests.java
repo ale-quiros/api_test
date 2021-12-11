@@ -18,7 +18,7 @@ import io.restassured.response.Response;
 
 public class PostTests extends BaseTest{
 
-    String postId = "0001";
+    String postId = ""; // Variable global que sera seteada por Test_Create_Post_RequestSpecification y utilizada en varios metodos
     String resourcePath = "/v1/post";
 
     /*
@@ -42,12 +42,17 @@ public class PostTests extends BaseTest{
 
      */
 
-    /*---------------------------------------------------------------------------------------------------
-    Crea un post con un titulo y contenido ramdom.  No tiene dependecias pero si usa autenticacion
-    bearer entnoces recibe el token en el givem
-    ----------------------------------------------------------------------------------------------------*/
-    @Test(priority=1)
-    public void Test_Create_Post_RequestSpecification(){
+    /*------------------------------------------------------------------------------------------------------
+    Test Positivo de create Post:
+    - Necesita un token bearer porque necesita estar logeado
+    - Crea un post
+    - Valida un mensaje de Post Created y el status 200
+    - Setea una variable  postId con el ID del post recien creado el que es utilizado por los otros metodos
+      por lo que los otros metodos dependen de este en especifico
+     -------------------------------------------------------------------------------------------------------*/
+
+    @Test(priority=1 ,groups="Posts")
+    public void Positive_Test_Create_Post(){
         Post newPost = new Post(DataHelper.generateRandomTitle(), DataHelper.generateRandomContent());
 
         Response response = given()
@@ -59,22 +64,65 @@ public class PostTests extends BaseTest{
                 .spec(ResponseSpecs.defaultSpec())
                 .body("message", equalTo("Post created"))
                 .statusCode(200)
-        .extract().
-                response();
+        .extract().response();
 
         JsonPath jsonPathEvaluator = response.jsonPath();
         postId = Integer.toString(jsonPathEvaluator.get("id"));
-
-        System.out.println("test:" + postId);
     }
 
-    /*---------------------------------------------------------------------------------------------------
-       Retorna un post existente.
-        Antes de correrlo debe existir un post entonces se llama la metodo PostHelper.getPostId() que crea
-        un nuevo post y lo devuelve
-     ----------------------------------------------------------------------------------------------------*/
-    @Test (priority=2)
-    public void Test_Get_Post(){
+    /*------------------------------------------------------------------------------------------------------
+    Test Negativo de create Post:
+    - Necesita un token bearer porque necesita estar logeado
+    - No recibe Json con la info para crear un post
+    - Valida un mensaje de Invalid form y el status 406
+ -------------------------------------------------------------------------------------------------------*/
+
+    @Test(priority=1 ,groups="Posts")
+    public void Negative_Test_CreatePost_No_Params (){
+       String emptyJson = "";
+
+        given()
+                .spec(RequestSpecs.generateToken())
+                .body(emptyJson)
+        .when()
+                .post(resourcePath )
+        .then()
+                .spec(ResponseSpecs.defaultSpec())
+                .body("message", equalTo("Invalid form"))
+                .statusCode(406);
+    }
+
+/*------------------------------------------------------------------------------------------------------
+    Test Seguridad Negativo de create Post:
+    - Necesita un token bearer porque necesita estar logeado
+    - No recibe Json con la info para crear un post
+    - Valida un mensaje de Invalid form y el status 406
+ -------------------------------------------------------------------------------------------------------*/
+
+    @Test(priority=1 ,groups="Posts")
+    public void Negative_Test_CreatePost_Security (){
+        Post newPost = new Post(DataHelper.generateRandomTitle(), DataHelper.generateRandomContent());
+
+        given()
+                .spec(RequestSpecs.generateInvalidToken())
+                .body(newPost)
+        .when()
+                .post(resourcePath )
+       .then()
+                .spec(ResponseSpecs.defaultSpec())
+                .body("message", equalTo("Please login first"))
+                .statusCode(401);
+    }
+
+/*------------------------------------------------------------------------------------------------------
+    Test Positivo de get Post:
+    - Necesita un token bearer porque necesita estar logeado
+    - Depende de Positive_Test_Create_Post porque utiliza un postId que es seteada por este metodo
+    - Valida un mensaje que el response contenga un String data y el status 200
+ -------------------------------------------------------------------------------------------------------*/
+
+    @Test (priority=2,groups="Posts")
+    public void Positive_Test_Get_Post(){
         given()
                 .spec(RequestSpecs.generateToken())
         .when()
@@ -84,13 +132,51 @@ public class PostTests extends BaseTest{
                 .statusCode(200);
     }
 
-    /*---------------------------------------------------------------------------------------------------
-   Actualiza un post existente.
-    Antes de correrlo debe existir un post entonces se llama la metodo PostHelper.getPostId() que crea
-    un nuevo post y lo actualiza
- ----------------------------------------------------------------------------------------------------*/
-    @Test (priority=3)
-    public void Test_Update_Post(){
+    /*------------------------------------------------------------------------------------------------------
+    Test Positivo de get Post:
+    - Necesita un token bearer porque necesita estar logeado
+    - Depende de Positive_Test_Create_Post porque utiliza un postId que es seteada por este metodo
+    - Valida un status 404 puesto que la pagina no existiria
+ -------------------------------------------------------------------------------------------------------*/
+
+    @Test (priority=2,groups="Posts")
+    public void Negative_Test_Get_Post_WrongPostID(){
+        given()
+                .spec(RequestSpecs.generateToken())
+        .when()
+                .get(resourcePath + "/" + "WrongPostID")
+        .then()
+                .statusCode(404);
+    }
+
+    /*------------------------------------------------------------------------------------------------------
+        Test Seguridad Negativo de Seguridad:
+        - Necesita un token bearer porque necesita estar logeado
+        - No recibe Json con la info para crear un post
+        - Valida un mensaje de Logging first y el status 401
+     -------------------------------------------------------------------------------------------------------*/
+
+    @Test (priority=2,groups="Posts")
+    public void Negative_Test_Get_Post_Security(){
+        given()
+                .spec(RequestSpecs.generateInvalidToken())
+        .when()
+                .get(resourcePath + "/" + postId)
+        .then()
+                .spec(ResponseSpecs.defaultSpec())
+                .body("message", equalTo("Please login first"))
+                .statusCode(401);
+    }
+
+    /*------------------------------------------------------------------------------------------------------
+    Test Positivo de update Post:
+    - Necesita un token bearer porque necesita estar logeado
+    - Depende de Positive_Test_Create_Post porque utiliza un postId que es seteada por este metodo
+    - Valida un mensaje que el response contenga un Post updated y el status 200
+ -------------------------------------------------------------------------------------------------------*/
+
+    @Test (priority=3,groups="Posts")
+    public void Positive_Test_Update_Post(){
         Post updatePost = new Post("Title updated","Content Updated");
 
         given()
@@ -103,13 +189,58 @@ public class PostTests extends BaseTest{
                 .body("message", equalTo("Post updated"))
                 .statusCode(200);
     }
+    /*------------------------------------------------------------------------------------------------------
+    Test Negativo de update Post:
+    - Necesita un token bearer porque necesita estar logeado
+    - Para fallar solo recibe un parametro en vez de los dos requeridos
+    - Valida un mensaje que el response contenga un invalid form y el status 406
+ -------------------------------------------------------------------------------------------------------*/
 
-    /*---------------------------------------------------------------------------------------------------
-Obtiene todos los posts. No tiene dependecias pero si usa autenticacion
-bearer entnoces recibe el token en el givem
-----------------------------------------------------------------------------------------------------*/
-    @Test(priority=4)
-    public void Test_Get_Posts(){
+    @Test (priority=3,groups="Posts")
+    public void Negative_Test_Update_Post_Missing_Param(){
+        Post updatePost = new Post("Title updated");
+
+        given()
+                .spec(RequestSpecs.generateToken())
+                .body(updatePost)
+        .when()
+                .put(resourcePath + "/" + postId)
+        .then()
+                .spec(ResponseSpecs.defaultSpec())
+                .body("message", equalTo("Invalid form"))
+                .statusCode(406);
+    }
+
+     /*------------------------------------------------------------------------------------------------------
+        Test Seguridad Negativo de Seguridad:
+        - Necesita un token bearer porque necesita estar logeado
+        - No recibe Json con la info para crear un post
+        - Valida un mensaje de Logging first y el status 401
+     -------------------------------------------------------------------------------------------------------*/
+
+    @Test (priority=3,groups="Posts")
+    public void Negative_Test_Update_Post_Security(){
+        Post updatePost = new Post("Title updated","Content Updated");
+
+        given()
+                .spec(RequestSpecs.generateInvalidToken())
+                .body(updatePost)
+        .when()
+                .put(resourcePath + "/" + postId)
+        .then()
+                .spec(ResponseSpecs.defaultSpec())
+                .body("message", equalTo("Please login first"))
+                .statusCode(401);
+    }
+
+    /*------------------------------------------------------------------------------------------------------
+    Test Positivo de get Posts:
+    - Necesita un token bearer porque necesita estar logeado
+    - Valida un mensaje que el response contenga un Results y el status 200
+ -------------------------------------------------------------------------------------------------------*/
+
+    @Test(priority=4,groups="Posts")
+    public void Positive_Test_Get_Posts(){
         given()
                 .spec(RequestSpecs.generateToken())
                 .when()
@@ -119,13 +250,49 @@ bearer entnoces recibe el token en el givem
                 .statusCode(200);
     }
 
-    /*---------------------------------------------------------------------------------------------------
-    Elimina un post existente.
-    Antes de correrlo debe existir un post entonces se llama la metodo PostHelper.getPostId() que crea
-    un nuevo post y lo actualiza
-    ----------------------------------------------------------------------------------------------------*/
-    @Test(priority=5)
-    public void Test_Delete_Post(){
+    /*------------------------------------------------------------------------------------------------------
+      Test Negativo de update Post:
+      - Necesita un token bearer porque necesita estar logeado
+      - Para fallar en el uri se especifica post en vez de posts para hacerlo incorrecto
+      - Valida un status 404 puesto que el URI no existe
+   -------------------------------------------------------------------------------------------------------*/
+
+    @Test(priority=4,groups="Posts")
+    public void Negative_Test_Get_Posts_WrongURI(){
+        given()
+                .spec(RequestSpecs.generateToken())
+        .when()
+                .get(resourcePath)
+        .then()
+                .statusCode(404);
+    }
+
+    /*------------------------------------------------------------------------------------------------------
+    Test Negativo de Seguridad de get Posts:
+    - Valida un mensaje de Logging first y el status 401
+ -------------------------------------------------------------------------------------------------------*/
+
+    @Test(priority=4,groups="Posts")
+    public void Negative_Test_Get_Posts(){
+        given()
+                .spec(RequestSpecs.generateInvalidToken())
+        .when()
+                .get(resourcePath+"s")
+        .then()
+                .spec(ResponseSpecs.defaultSpec())
+                .body("message", equalTo("Please login first"))
+                .statusCode(401);
+    }
+
+    /*------------------------------------------------------------------------------------------------------
+Test Positivo de delete Post:
+- Necesita un token bearer porque necesita estar logeado
+- Depende de Positive_Test_Create_Post porque utiliza un postId que es seteada por este metodo
+- Valida un mensaje que el response contenga un Post deleted y el status 200
+-------------------------------------------------------------------------------------------------------*/
+
+    @Test(priority=5,groups="Posts")
+    public void Positive_Test_Delete_Post(){
         given()
                 .spec(RequestSpecs.generateToken())
         .when()
@@ -136,5 +303,37 @@ bearer entnoces recibe el token en el givem
                 .statusCode(200);
     }
 
+    /*------------------------------------------------------------------------------------------------------
+      Test Negativo de update Post:
+      - Necesita un token bearer porque necesita estar logeado
+      - Para fallar en el uri se especifica un PostID que no existe
+      - Valida un status 404 puesto que el URI no existe
+   -------------------------------------------------------------------------------------------------------*/
 
+
+    @Test(priority=5,groups="Posts")
+    public void Negative_Test_Delete_Post_Worng_PostID(){
+        given()
+                .spec(RequestSpecs.generateToken())
+        .when()
+                .delete(resourcePath + "/" + "Wrong")
+        .then()
+                .statusCode(404);
+    }
+
+        /*------------------------------------------------------------------------------------------------------
+    Test Negativo de Seguridad de get Posts:
+    - Valida un mensaje de Logging first y el status 401
+ -------------------------------------------------------------------------------------------------------*/
+
+    public void Negative_Test_Delete_Post_Security(){
+        given()
+                .spec(RequestSpecs.generateInvalidToken())
+        .when()
+                .delete(resourcePath + "/" + postId)
+        .then()
+                .spec(ResponseSpecs.defaultSpec())
+                .body("message", equalTo("Please login first"))
+                .statusCode(401);
+    }
 }
