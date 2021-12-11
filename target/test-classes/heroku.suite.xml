@@ -3,10 +3,15 @@
 <suite name="HerokuExecution" parallel="tests">
 
     <parameter name="baseUrl" value="https://api-coffee-testing.herokuapp.com"></parameter>
-
+    
     <test name="Post">
         <classes>
             <class name="PostTests"></class>
+        </classes>
+    </test>
+    <test name="Comments">
+        <classes>
+            <class name="CommentsTests"></class>
         </classes>
     </test>
 </suite>

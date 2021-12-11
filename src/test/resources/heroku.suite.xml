@@ -9,4 +9,9 @@
             <class name="PostTests"></class>
         </classes>
     </test>
+    <test name="Comments">
+        <classes>
+            <class name="CommentsTests"></class>
+        </classes>
+    </test>
 </suite>

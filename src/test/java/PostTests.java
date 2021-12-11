@@ -12,10 +12,13 @@ import specifications.ResponseSpecs;
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+
 
 public class PostTests extends BaseTest{
 
-    String postId = "000";
+    String postId = "0001";
     String resourcePath = "/v1/post";
 
     /*
@@ -39,16 +42,15 @@ public class PostTests extends BaseTest{
 
      */
 
-
     /*---------------------------------------------------------------------------------------------------
     Crea un post con un titulo y contenido ramdom.  No tiene dependecias pero si usa autenticacion
     bearer entnoces recibe el token en el givem
     ----------------------------------------------------------------------------------------------------*/
-    @Test
+    @Test(priority=1)
     public void Test_Create_Post_RequestSpecification(){
         Post newPost = new Post(DataHelper.generateRandomTitle(), DataHelper.generateRandomContent());
 
-        given()
+        Response response = given()
                 .spec(RequestSpecs.generateToken())
                 .body(newPost)
         .when()
@@ -56,22 +58,14 @@ public class PostTests extends BaseTest{
         .then()
                 .spec(ResponseSpecs.defaultSpec())
                 .body("message", equalTo("Post created"))
-                .statusCode(200);
-    }
+                .statusCode(200)
+        .extract().
+                response();
 
-    /*---------------------------------------------------------------------------------------------------
-    Obtiene todos los posts. No tiene dependecias pero si usa autenticacion
-    bearer entnoces recibe el token en el givem
-    ----------------------------------------------------------------------------------------------------*/
-    @Test
-    public void Test_Get_Posts(){
-        given()
-                .spec(RequestSpecs.generateToken())
-        .when()
-                .get(resourcePath+"s")
-        .then()
-                .body(StringContains.containsString("results"))
-                .statusCode(200);
+        JsonPath jsonPathEvaluator = response.jsonPath();
+        postId = Integer.toString(jsonPathEvaluator.get("id"));
+
+        System.out.println("test:" + postId);
     }
 
     /*---------------------------------------------------------------------------------------------------
@@ -79,12 +73,12 @@ public class PostTests extends BaseTest{
         Antes de correrlo debe existir un post entonces se llama la metodo PostHelper.getPostId() que crea
         un nuevo post y lo devuelve
      ----------------------------------------------------------------------------------------------------*/
-    @Test
+    @Test (priority=2)
     public void Test_Get_Post(){
         given()
                 .spec(RequestSpecs.generateToken())
         .when()
-                .get(resourcePath + "/" + PostHelper.getPostId())
+                .get(resourcePath + "/" + postId)
         .then()
                 .body(StringContains.containsString("data"))
                 .statusCode(200);
@@ -95,7 +89,7 @@ public class PostTests extends BaseTest{
     Antes de correrlo debe existir un post entonces se llama la metodo PostHelper.getPostId() que crea
     un nuevo post y lo actualiza
  ----------------------------------------------------------------------------------------------------*/
-    @Test
+    @Test (priority=3)
     public void Test_Update_Post(){
         Post updatePost = new Post("Title updated","Content Updated");
 
@@ -103,10 +97,25 @@ public class PostTests extends BaseTest{
                 .spec(RequestSpecs.generateToken())
                 .body(updatePost)
         .when()
-                .put(resourcePath + "/" + PostHelper.getPostId())
+                .put(resourcePath + "/" + postId)
         .then()
                 .spec(ResponseSpecs.defaultSpec())
                 .body("message", equalTo("Post updated"))
+                .statusCode(200);
+    }
+
+    /*---------------------------------------------------------------------------------------------------
+Obtiene todos los posts. No tiene dependecias pero si usa autenticacion
+bearer entnoces recibe el token en el givem
+----------------------------------------------------------------------------------------------------*/
+    @Test(priority=4)
+    public void Test_Get_Posts(){
+        given()
+                .spec(RequestSpecs.generateToken())
+                .when()
+                .get(resourcePath+"s")
+                .then()
+                .body(StringContains.containsString("results"))
                 .statusCode(200);
     }
 
@@ -115,15 +124,12 @@ public class PostTests extends BaseTest{
     Antes de correrlo debe existir un post entonces se llama la metodo PostHelper.getPostId() que crea
     un nuevo post y lo actualiza
     ----------------------------------------------------------------------------------------------------*/
-    @Test
+    @Test(priority=5)
     public void Test_Delete_Post(){
-        Post updatePost = new Post("Title updated","Content Updated");
-
         given()
                 .spec(RequestSpecs.generateToken())
-                .body(updatePost)
         .when()
-                .delete(resourcePath + "/" + PostHelper.getPostId())
+                .delete(resourcePath + "/" + postId)
         .then()
                 .spec(ResponseSpecs.defaultSpec())
                 .body("message", equalTo("Post deleted"))
