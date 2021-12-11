@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-12-07T03:26:47Z" name="HerokuExecution" finished-at="2021-12-07T03:26:51Z" duration-ms="4372">
+    <groups>
+    </groups>
+    <test started-at="2021-12-07T03:26:47Z" name="Miscelaneo" finished-at="2021-12-07T03:26:50Z" duration-ms="2890">
+      <class name="Miscelaneo">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:Miscelaneo@fcd6521]" started-at="2021-12-07T03:26:47Z" name="setup" finished-at="2021-12-07T03:26:47Z" duration-ms="428" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://api-coffee-testing.herokuapp.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Test_404()[pri:0, instance:Miscelaneo@fcd6521]" started-at="2021-12-07T03:26:47Z" name="Test_404" finished-at="2021-12-07T03:26:49Z" duration-ms="1464" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_404 -->
+        <test-method signature="Test_HOME()[pri:0, instance:Miscelaneo@fcd6521]" started-at="2021-12-07T03:26:49Z" name="Test_HOME" finished-at="2021-12-07T03:26:49Z" duration-ms="502" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_HOME -->
+        <test-method signature="Test_PING()[pri:0, instance:Miscelaneo@fcd6521]" started-at="2021-12-07T03:26:49Z" name="Test_PING" finished-at="2021-12-07T03:26:50Z" duration-ms="488" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_PING -->
+      </class> <!-- Miscelaneo -->
+    </test> <!-- Miscelaneo -->
+    <test started-at="2021-12-07T03:26:47Z" name="Users" finished-at="2021-12-07T03:26:51Z" duration-ms="4372">
+      <class name="Users">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:Users@aecb35a]" started-at="2021-12-07T03:26:47Z" name="setup" finished-at="2021-12-07T03:26:47Z" duration-ms="428" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://api-coffee-testing.herokuapp.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Test_User_Login()[pri:0, instance:Users@aecb35a]" started-at="2021-12-07T03:26:47Z" name="Test_User_Login" finished-at="2021-12-07T03:26:49Z" duration-ms="1846" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_User_Login -->
+        <test-method signature="Test_User_Logout()[pri:0, instance:Users@aecb35a]" started-at="2021-12-07T03:26:49Z" name="Test_User_Logout" finished-at="2021-12-07T03:26:50Z" duration-ms="1066" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_User_Logout -->
+        <test-method signature="Test_User_Registration()[pri:0, instance:Users@aecb35a]" started-at="2021-12-07T03:26:50Z" name="Test_User_Registration" finished-at="2021-12-07T03:26:51Z" duration-ms="534" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_User_Registration -->
+        <test-method signature="Test_User_Registration_Existing_User()[pri:0, instance:Users@aecb35a]" started-at="2021-12-07T03:26:51Z" name="Test_User_Registration_Existing_User" finished-at="2021-12-07T03:26:51Z" duration-ms="490" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_User_Registration_Existing_User -->
+      </class> <!-- Users -->
+    </test> <!-- Users -->
+  </suite> <!-- HerokuExecution -->
+</testng-results>

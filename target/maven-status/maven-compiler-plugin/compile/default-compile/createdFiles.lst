@@ -1,0 +1,6 @@
+model/User.class
+specifications/ResponseSpecs.class
+specifications/RequestSpecs.class
+helpers/DataHelper.class
+helpers/AuthHelper.class
+model/Article.class
