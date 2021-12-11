@@ -1,7 +1,4 @@
-import helpers.AuthHelper;
 import helpers.DataHelper;
-import helpers.PostHelper;
-import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import model.Post;
 import org.hamcrest.core.StringContains;
@@ -9,10 +6,8 @@ import org.testng.annotations.Test;
 import specifications.RequestSpecs;
 import specifications.ResponseSpecs;
 
-import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 
