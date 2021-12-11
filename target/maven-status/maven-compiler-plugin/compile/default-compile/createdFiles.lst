@@ -1,6 +1,9 @@
-model/User.class
-specifications/ResponseSpecs.class
-specifications/RequestSpecs.class
-helpers/DataHelper.class
-helpers/AuthHelper.class
-model/Article.class
+helpers\PostHelper.class
+helpers\DataHelper.class
+model\Article.class
+specifications\RequestSpecs.class
+helpers\AuthHelper.class
+specifications\ResponseSpecs.class
+model\Comment.class
+model\User.class
+model\Post.class

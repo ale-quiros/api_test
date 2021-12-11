@@ -1,65 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="4.602" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="28.397" tests="29" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="java.specification.version" value="17"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/Users/luis.ramirez/Desktop/UCreativa/Clase 2/PracticaRestAssured/target/test-classes:/Users/luis.ramirez/Desktop/UCreativa/Clase 2/PracticaRestAssured/target/classes:/Users/luis.ramirez/.m2/repository/io/rest-assured/rest-assured/4.3.1/rest-assured-4.3.1.jar:/Users/luis.ramirez/.m2/repository/org/codehaus/groovy/groovy/3.0.3/groovy-3.0.3.jar:/Users/luis.ramirez/.m2/repository/org/codehaus/groovy/groovy-xml/3.0.3/groovy-xml-3.0.3.jar:/Users/luis.ramirez/.m2/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar:/Users/luis.ramirez/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/Users/luis.ramirez/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/luis.ramirez/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/Users/luis.ramirez/.m2/repository/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.jar:/Users/luis.ramirez/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/luis.ramirez/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/luis.ramirez/.m2/repository/io/rest-assured/json-path/4.3.1/json-path-4.3.1.jar:/Users/luis.ramirez/.m2/repository/org/codehaus/groovy/groovy-json/3.0.3/groovy-json-3.0.3.jar:/Users/luis.ramirez/.m2/repository/io/rest-assured/rest-assured-common/4.3.1/rest-assured-common-4.3.1.jar:/Users/luis.ramirez/.m2/repository/io/rest-assured/xml-path/4.3.1/xml-path-4.3.1.jar:/Users/luis.ramirez/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar:/Users/luis.ramirez/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/Users/luis.ramirez/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/Users/luis.ramirez/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.3/jaxb-impl-2.3.3.jar:/Users/luis.ramirez/.m2/repository/org/testng/testng/6.14.3/testng-6.14.3.jar:/Users/luis.ramirez/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/Users/luis.ramirez/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar:/Users/luis.ramirez/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/Users/luis.ramirez/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/luis.ramirez/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/luis.ramirez/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.11.3/jackson-core-2.11.3.jar:/Users/luis.ramirez/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.6.0/jackson-databind-2.6.0.jar:/Users/luis.ramirez/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.6.0/jackson-annotations-2.6.0.jar:/Users/luis.ramirez/.m2/repository/org/apache/maven/surefire/surefire-testng-utils/2.22.0/surefire-testng-utils-2.22.0.jar:/Users/luis.ramirez/.m2/repository/org/apache/maven/surefire/surefire-grouper/2.22.0/surefire-grouper-2.22.0.jar:"/>
-    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\quirosal\OneDrive - Micro Focus\certificacion\ultimo curso\Clase 3 - RestAssured\target\test-classes;C:\Users\quirosal\OneDrive - Micro Focus\certificacion\ultimo curso\Clase 3 - RestAssured\target\classes;C:\Users\quirosal\.m2\repository\io\rest-assured\rest-assured\4.3.1\rest-assured-4.3.1.jar;C:\Users\quirosal\.m2\repository\org\codehaus\groovy\groovy\3.0.3\groovy-3.0.3.jar;C:\Users\quirosal\.m2\repository\org\codehaus\groovy\groovy-xml\3.0.3\groovy-xml-3.0.3.jar;C:\Users\quirosal\.m2\repository\org\apache\httpcomponents\httpclient\4.5.3\httpclient-4.5.3.jar;C:\Users\quirosal\.m2\repository\org\apache\httpcomponents\httpcore\4.4.6\httpcore-4.4.6.jar;C:\Users\quirosal\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\quirosal\.m2\repository\commons-codec\commons-codec\1.9\commons-codec-1.9.jar;C:\Users\quirosal\.m2\repository\org\apache\httpcomponents\httpmime\4.5.3\httpmime-4.5.3.jar;C:\Users\quirosal\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\quirosal\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\quirosal\.m2\repository\io\rest-assured\json-path\4.3.1\json-path-4.3.1.jar;C:\Users\quirosal\.m2\repository\org\codehaus\groovy\groovy-json\3.0.3\groovy-json-3.0.3.jar;C:\Users\quirosal\.m2\repository\io\rest-assured\rest-assured-common\4.3.1\rest-assured-common-4.3.1.jar;C:\Users\quirosal\.m2\repository\io\rest-assured\xml-path\4.3.1\xml-path-4.3.1.jar;C:\Users\quirosal\.m2\repository\org\apache\commons\commons-lang3\3.4\commons-lang3-3.4.jar;C:\Users\quirosal\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\Users\quirosal\.m2\repository\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar;C:\Users\quirosal\.m2\repository\com\sun\xml\bind\jaxb-impl\2.3.3\jaxb-impl-2.3.3.jar;C:\Users\quirosal\.m2\repository\org\testng\testng\6.14.3\testng-6.14.3.jar;C:\Users\quirosal\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\quirosal\.m2\repository\org\apache-extras\beanshell\bsh\2.0b6\bsh-2.0b6.jar;C:\Users\quirosal\.m2\repository\com\googlecode\json-simple\json-simple\1.1.1\json-simple-1.1.1.jar;C:\Users\quirosal\.m2\repository\junit\junit\4.10\junit-4.10.jar;C:\Users\quirosal\.m2\repository\org\hamcrest\hamcrest-core\1.1\hamcrest-core-1.1.jar;C:\Users\quirosal\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.11.3\jackson-core-2.11.3.jar;C:\Users\quirosal\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.6.0\jackson-databind-2.6.0.jar;C:\Users\quirosal\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.6.0\jackson-annotations-2.6.0.jar;C:\Users\quirosal\.m2\repository\org\apache\maven\surefire\surefire-testng-utils\2.22.0\surefire-testng-utils-2.22.0.jar;C:\Users\quirosal\.m2\repository\org\apache\maven\surefire\surefire-grouper\2.22.0\surefire-grouper-2.22.0.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
-    <property name="os.name" value="Mac OS X"/>
-    <property name="java.vm.specification.version" value="17"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Regina"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="user.country" value="CR"/>
-    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/17.0.1_1/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/luis.ramirez/Desktop/UCreativa/Clase 2/PracticaRestAssured/target/surefire/surefirebooter10463143507264885212.jar /Users/luis.ramirez/Desktop/UCreativa/Clase 2/PracticaRestAssured/target/surefire 2021-12-06T21-26-46_560-jvmRun1 surefire12714735529518263845tmp surefire_010421000301473915524tmp"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/Users/luis.ramirez/Desktop/UCreativa/Clase 2/PracticaRestAssured/target/test-classes:/Users/luis.ramirez/Desktop/UCreativa/Clase 2/PracticaRestAssured/target/classes:/Users/luis.ramirez/.m2/repository/io/rest-assured/rest-assured/4.3.1/rest-assured-4.3.1.jar:/Users/luis.ramirez/.m2/repository/org/codehaus/groovy/groovy/3.0.3/groovy-3.0.3.jar:/Users/luis.ramirez/.m2/repository/org/codehaus/groovy/groovy-xml/3.0.3/groovy-xml-3.0.3.jar:/Users/luis.ramirez/.m2/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar:/Users/luis.ramirez/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/Users/luis.ramirez/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/luis.ramirez/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/Users/luis.ramirez/.m2/repository/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.jar:/Users/luis.ramirez/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/luis.ramirez/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/luis.ramirez/.m2/repository/io/rest-assured/json-path/4.3.1/json-path-4.3.1.jar:/Users/luis.ramirez/.m2/repository/org/codehaus/groovy/groovy-json/3.0.3/groovy-json-3.0.3.jar:/Users/luis.ramirez/.m2/repository/io/rest-assured/rest-assured-common/4.3.1/rest-assured-common-4.3.1.jar:/Users/luis.ramirez/.m2/repository/io/rest-assured/xml-path/4.3.1/xml-path-4.3.1.jar:/Users/luis.ramirez/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar:/Users/luis.ramirez/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/Users/luis.ramirez/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/Users/luis.ramirez/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.3/jaxb-impl-2.3.3.jar:/Users/luis.ramirez/.m2/repository/org/testng/testng/6.14.3/testng-6.14.3.jar:/Users/luis.ramirez/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/Users/luis.ramirez/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar:/Users/luis.ramirez/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/Users/luis.ramirez/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/luis.ramirez/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/luis.ramirez/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.11.3/jackson-core-2.11.3.jar:/Users/luis.ramirez/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.6.0/jackson-databind-2.6.0.jar:/Users/luis.ramirez/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.6.0/jackson-annotations-2.6.0.jar:/Users/luis.ramirez/.m2/repository/org/apache/maven/surefire/surefire-testng-utils/2.22.0/surefire-testng-utils-2.22.0.jar:/Users/luis.ramirez/.m2/repository/org/apache/maven/surefire/surefire-grouper/2.22.0/surefire-grouper-2.22.0.jar:"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_271\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\quirosal\AppData\Local\Temp\surefire1730552769026188226\surefirebooter7939868597266654079.jar C:\Users\quirosal\AppData\Local\Temp\surefire1730552769026188226 2021-12-11T11-41-03_357-jvmRun1 surefire7174902561960030220tmp surefire_06040635175275220092tmp"/>
+    <property name="surefire.test.class.path" value="C:\Users\quirosal\OneDrive - Micro Focus\certificacion\ultimo curso\Clase 3 - RestAssured\target\test-classes;C:\Users\quirosal\OneDrive - Micro Focus\certificacion\ultimo curso\Clase 3 - RestAssured\target\classes;C:\Users\quirosal\.m2\repository\io\rest-assured\rest-assured\4.3.1\rest-assured-4.3.1.jar;C:\Users\quirosal\.m2\repository\org\codehaus\groovy\groovy\3.0.3\groovy-3.0.3.jar;C:\Users\quirosal\.m2\repository\org\codehaus\groovy\groovy-xml\3.0.3\groovy-xml-3.0.3.jar;C:\Users\quirosal\.m2\repository\org\apache\httpcomponents\httpclient\4.5.3\httpclient-4.5.3.jar;C:\Users\quirosal\.m2\repository\org\apache\httpcomponents\httpcore\4.4.6\httpcore-4.4.6.jar;C:\Users\quirosal\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\quirosal\.m2\repository\commons-codec\commons-codec\1.9\commons-codec-1.9.jar;C:\Users\quirosal\.m2\repository\org\apache\httpcomponents\httpmime\4.5.3\httpmime-4.5.3.jar;C:\Users\quirosal\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\quirosal\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\quirosal\.m2\repository\io\rest-assured\json-path\4.3.1\json-path-4.3.1.jar;C:\Users\quirosal\.m2\repository\org\codehaus\groovy\groovy-json\3.0.3\groovy-json-3.0.3.jar;C:\Users\quirosal\.m2\repository\io\rest-assured\rest-assured-common\4.3.1\rest-assured-common-4.3.1.jar;C:\Users\quirosal\.m2\repository\io\rest-assured\xml-path\4.3.1\xml-path-4.3.1.jar;C:\Users\quirosal\.m2\repository\org\apache\commons\commons-lang3\3.4\commons-lang3-3.4.jar;C:\Users\quirosal\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\Users\quirosal\.m2\repository\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar;C:\Users\quirosal\.m2\repository\com\sun\xml\bind\jaxb-impl\2.3.3\jaxb-impl-2.3.3.jar;C:\Users\quirosal\.m2\repository\org\testng\testng\6.14.3\testng-6.14.3.jar;C:\Users\quirosal\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\quirosal\.m2\repository\org\apache-extras\beanshell\bsh\2.0b6\bsh-2.0b6.jar;C:\Users\quirosal\.m2\repository\com\googlecode\json-simple\json-simple\1.1.1\json-simple-1.1.1.jar;C:\Users\quirosal\.m2\repository\junit\junit\4.10\junit-4.10.jar;C:\Users\quirosal\.m2\repository\org\hamcrest\hamcrest-core\1.1\hamcrest-core-1.1.jar;C:\Users\quirosal\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.11.3\jackson-core-2.11.3.jar;C:\Users\quirosal\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.6.0\jackson-databind-2.6.0.jar;C:\Users\quirosal\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.6.0\jackson-annotations-2.6.0.jar;C:\Users\quirosal\.m2\repository\org\apache\maven\surefire\surefire-testng-utils\2.22.0\surefire-testng-utils-2.22.0.jar;C:\Users\quirosal\.m2\repository\org\apache\maven\surefire\surefire-grouper\2.22.0\surefire-grouper-2.22.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/Users/luis.ramirez"/>
+    <property name="user.home" value="C:\Users\quirosal"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2021-10-19"/>
-    <property name="java.home" value="/usr/local/Cellar/openjdk/17.0.1_1/libexec/openjdk.jdk/Contents/Home"/>
-    <property name="file.separator" value="/"/>
-    <property name="basedir" value="/Users/luis.ramirez/Desktop/UCreativa/Clase 2/PracticaRestAssured"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_271\jre"/>
+    <property name="basedir" value="C:\Users\quirosal\OneDrive - Micro Focus\certificacion\ultimo curso\Clase 3 - RestAssured"/>
+    <property name="file.separator" value="\"/>
     <property name="line.separator" value="&#10;"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/luis.ramirez/Desktop/UCreativa/Clase 2/PracticaRestAssured/target/surefire/surefirebooter10463143507264885212.jar"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\quirosal\AppData\Local\Temp\surefire1730552769026188226\surefirebooter7939868597266654079.jar"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_271\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_271\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_271\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_271\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_271\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_271\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_271\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_271\jre\classes"/>
+    <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="java.runtime.version" value="17.0.1+1"/>
-    <property name="user.name" value="luis.ramirez"/>
-    <property name="path.separator" value=":"/>
-    <property name="os.version" value="11.5.2"/>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="file.encoding" value="UTF-8"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="java.vendor.version" value="Homebrew"/>
-    <property name="localRepository" value="/Users/luis.ramirez/.m2/repository"/>
-    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
-    <property name="java.io.tmpdir" value="/var/folders/_k/vr3v7yfd0s932kfpspml_zhs_bg0gc/T/"/>
-    <property name="java.version" value="17.0.1"/>
-    <property name="user.dir" value="/Users/luis.ramirez/Desktop/UCreativa/Clase 2/PracticaRestAssured"/>
-    <property name="os.arch" value="x86_64"/>
+    <property name="java.runtime.version" value="1.8.0_271-b09"/>
+    <property name="user.name" value="quirosal"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_271\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\quirosal\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\quirosal\AppData\Local\Temp\"/>
+    <property name="java.version" value="1.8.0_271"/>
+    <property name="user.dir" value="C:\Users\quirosal\OneDrive - Micro Focus\certificacion\ultimo curso\Clase 3 - RestAssured"/>
+    <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="native.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/Users/luis.ramirez/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
-    <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.vendor" value="Homebrew"/>
-    <property name="java.vm.version" value="17.0.1+1"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="java.class.version" value="61.0"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_271\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\quirosal\Downloads\apache-maven-3.8.1-bin\apache-maven-3.8.1\bin;C:\Program Files\Java\jdk1.8.0_271\bin;C:\Program Files\apache-maven-3.8.1\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\quirosal\AppData\Local\Microsoft\WindowsApps;C:\Users\quirosal\AppData\Roaming\npm;C:\Users\quirosal\AppData\Local\Programs\Microsoft VS Code\bin;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.271-b09"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_271\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="Test_404" classname="Miscelaneo" time="1.464"/>
-  <testcase name="Test_User_Login" classname="Users" time="0.381"/>
-  <testcase name="Test_HOME" classname="Miscelaneo" time="0.12"/>
-  <testcase name="Test_PING" classname="Miscelaneo" time="0.487"/>
-  <testcase name="Test_User_Logout" classname="Users" time="0.945"/>
-  <testcase name="Test_User_Registration" classname="Users" time="0.535"/>
-  <testcase name="Test_User_Registration_Existing_User" classname="Users" time="0.49"/>
+  <testcase name="Negative_Test_CreatePost_No_Params" classname="PostTests" time="3.546"/>
+  <testcase name="Negative_Test_CreatePost_Security" classname="PostTests" time="0.538"/>
+  <testcase name="Positive_Test_Create_Post" classname="PostTests" time="1.181"/>
+  <testcase name="Negative_Test_Get_Post_Security" classname="PostTests" time="0.522"/>
+  <testcase name="Negative_Test_Get_Post_WrongPostID" classname="PostTests" time="1.156"/>
+  <testcase name="Positive_Test_Get_Post" classname="PostTests" time="1.23"/>
+  <testcase name="Negative_Test_Update_Post_Missing_Param" classname="PostTests" time="1.183"/>
+  <testcase name="Negative_Test_Update_Post_Security" classname="PostTests" time="0.553"/>
+  <testcase name="Positive_Test_Update_Post" classname="PostTests" time="1.2"/>
+  <testcase name="Negative_Test_Get_Posts" classname="PostTests" time="0.533"/>
+  <testcase name="Negative_Test_Get_Posts_WrongURI" classname="PostTests" time="1.118"/>
+  <testcase name="Positive_Test_Get_Posts" classname="PostTests" time="1.207"/>
+  <testcase name="Negative_Test_Delete_Post_Worng_PostID" classname="PostTests" time="1.131"/>
+  <testcase name="Positive_Test_Delete_Post" classname="PostTests" time="1.177"/>
+  <testcase name="Positive_Test_Create_Comment" classname="CommentsTests" time="1.845"/>
+  <testcase name="Negative_Test_Create_Comment_Missing_Param" classname="CommentsTests" time="0.646"/>
+  <testcase name="Negative_Test_Create_Comment_Security" classname="CommentsTests" time="0.644"/>
+  <testcase name="Negative_Get_Comment_Security" classname="CommentsTests" time="0.637"/>
+  <testcase name="Positive_Test_Get_Comment" classname="CommentsTests" time="0.653"/>
+  <testcase name="NegativeTest_Get_Comment_Wrong_PostID" classname="CommentsTests" time="0.66"/>
+  <testcase name="Positive_Test_Get_Comments" classname="CommentsTests" time="0.64"/>
+  <testcase name="Negative_Test_Get_Comments_Security" classname="CommentsTests" time="0.634"/>
+  <testcase name="Negative_Test_Get_Comments_Missing_PostID" classname="CommentsTests" time="0.511"/>
+  <testcase name="Negative_Test_Update_Post_Security" classname="CommentsTests" time="0.633"/>
+  <testcase name="Positive_Test_Update_Post" classname="CommentsTests" time="0.646"/>
+  <testcase name="Negative_Test_Update_Post_Wrong_CommentID" classname="CommentsTests" time="0.627"/>
+  <testcase name="Negative_Test_Delete_Post_Security" classname="CommentsTests" time="0.642"/>
+  <testcase name="Negative_Test_Delete_Post_Wrong_URI" classname="CommentsTests" time="0.527"/>
+  <testcase name="Positive_Test_Delete_Post" classname="CommentsTests" time="0.613"/>
 </testsuite>

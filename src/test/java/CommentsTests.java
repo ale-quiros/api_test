@@ -160,7 +160,6 @@ public class CommentsTests extends BaseTest{
 
     @Test (priority=4,dependsOnGroups="Posts")
     public void Negative_Test_Update_Post_Wrong_CommentID(){
-        System.out.println(resourcePath + "/" + postId + "/" + "-1");
         Comment updateComment = new Comment("Title updated","Content Updated");
 
         given()

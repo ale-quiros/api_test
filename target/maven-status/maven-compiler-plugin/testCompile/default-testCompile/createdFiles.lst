@@ -1,4 +1,6 @@
 Miscelaneo.class
 ArticlesTests.class
 Users.class
+PostTests.class
+CommentsTests.class
 BaseTest.class
