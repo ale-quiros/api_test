@@ -326,6 +326,7 @@ Test Positivo de delete Post:
     - Valida un mensaje de Logging first y el status 401
  -------------------------------------------------------------------------------------------------------*/
 
+    @Test(priority=5,groups="Posts")
     public void Negative_Test_Delete_Post_Security(){
         given()
                 .spec(RequestSpecs.generateInvalidToken())
