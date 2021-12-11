@@ -15,7 +15,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class PostTests extends BaseTest{
 
-    String postId = "";
+    String postId = "000";
     String resourcePath = "/v1/post";
 
     /*
