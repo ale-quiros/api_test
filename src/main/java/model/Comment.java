@@ -9,6 +9,11 @@ public class Comment {
         this.comment = comment;
     }
 
+    //Usado para pruebas negativas
+    public Comment(String name) {
+        this.name = name;
+    }
+
     private String comment;
 
     public String getName() {

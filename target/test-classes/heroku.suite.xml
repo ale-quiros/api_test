@@ -7,8 +7,7 @@
     <test name="Main Execution">
         <classes>
             <class name="PostTests"></class>
-            <!--        <class name="CommentsTests"></class> -->
-              </classes>
-          </test>
-
-      </suite>
+            <class name="CommentsTests"></class>
+        </classes>
+    </test>
+</suite>

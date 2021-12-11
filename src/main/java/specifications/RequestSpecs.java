@@ -38,4 +38,14 @@ public class RequestSpecs {
         return requestSpecBuilder.build();
     }
 
+    public static RequestSpecification generateWrongBasicAuth(){
+        BasicAuthScheme basicAuth = new BasicAuthScheme();
+        basicAuth.setUserName("WrongUser");
+        basicAuth.setPassword("WrongPass");
+
+        RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
+        requestSpecBuilder.setAuth(basicAuth);
+        return requestSpecBuilder.build();
+    }
+
 }
